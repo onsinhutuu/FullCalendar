@@ -1,24 +1,32 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @event.body %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @event.end_date %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div class="container">
+	<div class="row  justify-content-center mt-5">
+		<p>
+		  <strong>タイトル:</strong>
+		  <%= @event.title %>
+		</p>
+	</div>
+	<div class="row  justify-content-center mt-5">
+		<p>
+		  <strong>内容:</strong>
+		  <%= @event.body %>
+		</p>
+	</div>
+	<div class="row  justify-content-center mt-5">
+		<p>
+		  <strong>開始:</strong>
+		  <%= l @event.start_date%>
+		</p>
+	</div>
+	<div class="row  justify-content-center mt-5">
+		<p>
+		  <strong>終了:</strong>
+		  <%= l @event.end_date %>
+		</p>
+	</div>
+	<div class="row  justify-content-center mt-5">
+		<%= link_to '編集する', edit_event_path(@event), class: "btn btn-success" %>
+		<%= link_to "削除する",event_path(@event), method: :delete, "data-confirm" => "本当に消しますか？",  class: "btn btn-dark"%>
+		<%= link_to 'カレンダーに戻る', events_path, class: "btn btn-danger"%>
+	</div>
+</div>

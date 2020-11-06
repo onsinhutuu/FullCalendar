@@ -12,11 +12,13 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
-//= require_tree .
 //= require jquery
 //= require moment
 //= require fullcalendar
+//= require popper
+//= require bootstrap-sprockets
+//= require turbolinks
+//= require_tree .
 
 $(function () {
     // 画面遷移を検知
@@ -45,15 +47,23 @@ $(function () {
                 dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
                 //ボタンのレイアウト
                 header: {
-                    left: '',
+                    left: 'eventCreateButton',
                     center: 'title',
                     right: 'today prev,next'
                 },
                 //終了時刻がないイベントの表示間隔
                 defaultTimedEventDuration: '03:00:00',
+                customButtons:{
+				            eventCreateButton:{
+				                text: 'イベントを作成',
+				                click:function(){
+				                    window.location.href = '/events/new';
+				                }
+				            }
+				        },
                 buttonText: {
-                    prev: '前',
-                    next: '次',
+                    prev: '前月',
+                    next: '次月',
                     prevYear: '前年',
                     nextYear: '翌年',
                     today: '今日',

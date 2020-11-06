@@ -14,3 +14,9 @@
  *= require_self
  *= require fullcalendar
  */
+ @import "bootstrap";
+
+input[type="text"] {
+        width: 500px;
+        height: 40px;
+}

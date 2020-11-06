@@ -10,28 +10,34 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_field :body %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="row  justify-content-center mt-3">
+      <div class="field">
+        <%= form.label :title, "タイトル" %>
+        <%= form.text_field :title %>
+      </div>
+    </div>
+    <div class="row  justify-content-center mt-3 ml-1">
+      <div class="field">
+        <%= form.label :body, "内容"%>
+        <%= form.text_field :body %>
+      </div>
+    </div>
+    <div class="row  justify-content-center mt-3">
+      <div class="field">
+        <%= form.label :start_date, "開始" %>
+        <%= form.datetime_select :start_date %>
+      </div>
+    </div>
+    <div class="row  justify-content-center mt-3">
+      <div class="field">
+        <%= form.label :end_date, "終了" %>
+        <%= form.datetime_select :end_date %>
+      </div>
+    </div>
+    <div class="row  justify-content-center mt-3">
+      <div class="actions">
+        <%= form.submit "追加", class: "btn btn-primary" %>
+        <%= link_to 'カレンダーに戻る',  events_path, class: "btn btn-danger" %>
+      </div>
+    </div>
 <% end %>
