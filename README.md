@@ -1,24 +1,16 @@
-# README
+# <FullCalendar>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+カレンダーにイベントを追加できる。追加したイベントはカレンダーに表示される。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## アピールポイント
+##1.開発スピード
+Scaffold、gem、jqueryを使用して、カレンダー実装を約半日でレイアウトまで完成させた。
+##2.テスト
+動作するかの確証を得るため、Rspec、FactoryBot、Capybaraを使用してテストを書いた。
+##3.レイアウト
+レイアウトはイベントを見るだけのカレンダーなのでBootstrap4を使用し、シンプルなものにした。
+##4.ユーザーエクスペリエンス
+トップページをカレンダーにすることでイベントを確認しやすくした。
+イベントの詳細ページで詳細内容を確認、編集できるように編集ページを作成、詳細ページから飛ぶことができる。
+削除ができるように削除ボタンを詳細ページに配置。
