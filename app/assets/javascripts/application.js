@@ -55,7 +55,7 @@ $(function () {
                 defaultTimedEventDuration: '03:00:00',
                 customButtons:{
 				            eventCreateButton:{
-				                text: 'イベントを作成',
+				                text: 'イベントを追加',
 				                click:function(){
 				                    window.location.href = '/events/new';
 				                }
