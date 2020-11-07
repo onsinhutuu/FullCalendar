@@ -33,7 +33,7 @@ RSpec.describe 'Eventscontrollerのテスト', js: true, type: :feature do
 		    it '投稿に失敗する' do
 		    	visit new_event_path
 			  	click_button '追加'
-			  	expect(page).to have_content 'error'
+			  	expect(page).to have_content 'を入力してください'
 			  	expect(current_path).to eq('/events')
 				end
 			end
@@ -67,7 +67,7 @@ RSpec.describe 'Eventscontrollerのテスト', js: true, type: :feature do
 					visit edit_event_path(event)
 					fill_in 'event[title]', with: ''
 					click_button '追加'
-					expect(page).to have_content 'error'
+					expect(page).to have_content 'を入力してください'
 					expect(current_path).to eq '/events/' + event.id.to_s
 				end
 			end
