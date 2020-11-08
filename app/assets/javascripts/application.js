@@ -21,14 +21,16 @@
 //= require_tree .
 
 $(function () {
-    // 画面遷移を検知
+    //初回読み込み、リロード、ページ切り替えで動く。
     $(document).on('turbolinks:load', function () {
+    	// lengthを呼び出すことで、#calendarが存在していた場合はtrueの処理がされ、無い場合はnillを返す
         if ($('#calendar').length) {
 
             function Calendar() {
                 return $('#calendar').fullCalendar({
                 });
             }
+            //カレンダー初期化の関数。
             function clearCalendar() {
                 $('#calendar').html('');
             }

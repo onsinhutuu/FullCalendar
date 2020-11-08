@@ -25,40 +25,28 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
-    respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, flash: {success: "イベントが追加されました"} }
-        format.json { render :show, status: :created, location: @event }
+         redirect_to @event, flash: {success: "イベントが追加されました"}
       else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+         render :new
       end
-    end
   end
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, flash: {info: "イベントが更新されました"} }
-        format.json { render :show, status: :ok, location: @event }
+        redirect_to @event, flash: {info: "イベントが更新されました"}
       else
-        format.html { render :edit }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+       render :edit
       end
-    end
   end
 
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
     @event.destroy
-    respond_to do |format|
-      format.html { redirect_to events_url, flash: {danger: "イベントが削除されました"} }
-      format.json { head :no_content }
-    end
+    redirect_to events_url, flash: {danger: "イベントが削除されました"}
   end
 
   private
